@@ -7,16 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D7148552CA2594A0082737F /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7148542CA2594A0082737F /* CategoryView.swift */; };
+		9D78CE672CA2788500133FC4 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D78CE662CA2788500133FC4 /* CategoryCollectionViewCell.swift */; };
 		9DB323A22CA0C1A4008ECAE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB323A12CA0C1A4008ECAE9 /* AppDelegate.swift */; };
 		9DB323A42CA0C1A4008ECAE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB323A32CA0C1A4008ECAE9 /* SceneDelegate.swift */; };
-		9DB323A62CA0C1A4008ECAE9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB323A52CA0C1A4008ECAE9 /* ViewController.swift */; };
-		9DB323A92CA0C1A4008ECAE9 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 9DB323A82CA0C1A4008ECAE9 /* Base */; };
+		9DB323A62CA0C1A4008ECAE9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB323A52CA0C1A4008ECAE9 /* HomeViewController.swift */; };
 		9DB323AC2CA0C1A4008ECAE9 /* TipMemory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9DB323AA2CA0C1A4008ECAE9 /* TipMemory.xcdatamodeld */; };
 		9DB323AE2CA0C1A6008ECAE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DB323AD2CA0C1A6008ECAE9 /* Assets.xcassets */; };
 		9DB323B12CA0C1A6008ECAE9 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 9DB323B02CA0C1A6008ECAE9 /* Base */; };
 		9DB323BC2CA0C1A6008ECAE9 /* TipMemoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB323BB2CA0C1A6008ECAE9 /* TipMemoryTests.swift */; };
 		9DB323C62CA0C1A6008ECAE9 /* TipMemoryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB323C52CA0C1A6008ECAE9 /* TipMemoryUITests.swift */; };
 		9DB323C82CA0C1A6008ECAE9 /* TipMemoryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB323C72CA0C1A6008ECAE9 /* TipMemoryUITestsLaunchTests.swift */; };
+		9DB323D82CA0C7B8008ECAE9 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB323D72CA0C7B8008ECAE9 /* SearchResultsViewController.swift */; };
+		9DB323DA2CA1185C008ECAE9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB323D92CA1185C008ECAE9 /* SearchViewController.swift */; };
+		9DB323DC2CA11886008ECAE9 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB323DB2CA11886008ECAE9 /* MainTabBarController.swift */; };
+		9DB323DE2CA11AE8008ECAE9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB323DD2CA11AE8008ECAE9 /* ProfileViewController.swift */; };
+		9DB323E02CA11DE6008ECAE9 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB323DF2CA11DE6008ECAE9 /* LocationViewController.swift */; };
+		9DB323E52CA12572008ECAE9 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB323E42CA12572008ECAE9 /* HomeHeaderView.swift */; };
+		9DB323E82CA12789008ECAE9 /* HomeMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB323E72CA12789008ECAE9 /* HomeMainView.swift */; };
+		9DB324072CA21EFB008ECAE9 /* MonoplexKR-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DB324012CA21EFB008ECAE9 /* MonoplexKR-Bold.ttf */; };
+		9DB324082CA21EFB008ECAE9 /* MonoplexKR-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DB324012CA21EFB008ECAE9 /* MonoplexKR-Bold.ttf */; };
+		9DB324092CA21EFB008ECAE9 /* MonoplexKR-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DB324012CA21EFB008ECAE9 /* MonoplexKR-Bold.ttf */; };
+		9DB3240A2CA21EFB008ECAE9 /* MonoplexKR-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DB324022CA21EFB008ECAE9 /* MonoplexKR-Medium.ttf */; };
+		9DB3240B2CA21EFB008ECAE9 /* MonoplexKR-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DB324022CA21EFB008ECAE9 /* MonoplexKR-Medium.ttf */; };
+		9DB3240C2CA21EFB008ECAE9 /* MonoplexKR-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DB324022CA21EFB008ECAE9 /* MonoplexKR-Medium.ttf */; };
+		9DB3240D2CA21EFB008ECAE9 /* MonoplexKR-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DB324032CA21EFB008ECAE9 /* MonoplexKR-ExtraLight.ttf */; };
+		9DB3240E2CA21EFB008ECAE9 /* MonoplexKR-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DB324032CA21EFB008ECAE9 /* MonoplexKR-ExtraLight.ttf */; };
+		9DB3240F2CA21EFB008ECAE9 /* MonoplexKR-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DB324032CA21EFB008ECAE9 /* MonoplexKR-ExtraLight.ttf */; };
+		9DB324102CA21EFB008ECAE9 /* MonoplexKR-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DB324042CA21EFB008ECAE9 /* MonoplexKR-Regular.ttf */; };
+		9DB324112CA21EFB008ECAE9 /* MonoplexKR-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DB324042CA21EFB008ECAE9 /* MonoplexKR-Regular.ttf */; };
+		9DB324122CA21EFB008ECAE9 /* MonoplexKR-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DB324042CA21EFB008ECAE9 /* MonoplexKR-Regular.ttf */; };
+		9DB324132CA21EFB008ECAE9 /* MonoplexKR-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DB324052CA21EFB008ECAE9 /* MonoplexKR-Thin.ttf */; };
+		9DB324142CA21EFB008ECAE9 /* MonoplexKR-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DB324052CA21EFB008ECAE9 /* MonoplexKR-Thin.ttf */; };
+		9DB324152CA21EFB008ECAE9 /* MonoplexKR-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DB324052CA21EFB008ECAE9 /* MonoplexKR-Thin.ttf */; };
+		9DB324162CA21EFB008ECAE9 /* MonoplexKR-Text.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DB324062CA21EFB008ECAE9 /* MonoplexKR-Text.ttf */; };
+		9DB324172CA21EFB008ECAE9 /* MonoplexKR-Text.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DB324062CA21EFB008ECAE9 /* MonoplexKR-Text.ttf */; };
+		9DB324182CA21EFB008ECAE9 /* MonoplexKR-Text.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DB324062CA21EFB008ECAE9 /* MonoplexKR-Text.ttf */; };
+		9DB3241B2CA24A4F008ECAE9 /* HakgyoansimBunpilR.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DB324192CA24A4F008ECAE9 /* HakgyoansimBunpilR.otf */; };
+		9DB3241C2CA24A4F008ECAE9 /* HakgyoansimBunpilR.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DB324192CA24A4F008ECAE9 /* HakgyoansimBunpilR.otf */; };
+		9DB3241D2CA24A4F008ECAE9 /* HakgyoansimBunpilR.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DB324192CA24A4F008ECAE9 /* HakgyoansimBunpilR.otf */; };
+		9DB3241E2CA24A4F008ECAE9 /* HakgyoansimBunpilR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DB3241A2CA24A4F008ECAE9 /* HakgyoansimBunpilR.ttf */; };
+		9DB3241F2CA24A4F008ECAE9 /* HakgyoansimBunpilR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DB3241A2CA24A4F008ECAE9 /* HakgyoansimBunpilR.ttf */; };
+		9DB324202CA24A4F008ECAE9 /* HakgyoansimBunpilR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DB3241A2CA24A4F008ECAE9 /* HakgyoansimBunpilR.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,11 +69,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9D7148542CA2594A0082737F /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		9D78CE662CA2788500133FC4 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		9DB3239E2CA0C1A4008ECAE9 /* TipMemory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipMemory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DB323A12CA0C1A4008ECAE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DB323A32CA0C1A4008ECAE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9DB323A52CA0C1A4008ECAE9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9DB323A82CA0C1A4008ECAE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9DB323A52CA0C1A4008ECAE9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9DB323AB2CA0C1A4008ECAE9 /* TipMemory.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TipMemory.xcdatamodel; sourceTree = "<group>"; };
 		9DB323AD2CA0C1A6008ECAE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DB323B02CA0C1A6008ECAE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +84,21 @@
 		9DB323C12CA0C1A6008ECAE9 /* TipMemoryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TipMemoryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DB323C52CA0C1A6008ECAE9 /* TipMemoryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipMemoryUITests.swift; sourceTree = "<group>"; };
 		9DB323C72CA0C1A6008ECAE9 /* TipMemoryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipMemoryUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9DB323D72CA0C7B8008ECAE9 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
+		9DB323D92CA1185C008ECAE9 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		9DB323DB2CA11886008ECAE9 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		9DB323DD2CA11AE8008ECAE9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		9DB323DF2CA11DE6008ECAE9 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		9DB323E42CA12572008ECAE9 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
+		9DB323E72CA12789008ECAE9 /* HomeMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMainView.swift; sourceTree = "<group>"; };
+		9DB324012CA21EFB008ECAE9 /* MonoplexKR-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MonoplexKR-Bold.ttf"; sourceTree = "<group>"; };
+		9DB324022CA21EFB008ECAE9 /* MonoplexKR-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MonoplexKR-Medium.ttf"; sourceTree = "<group>"; };
+		9DB324032CA21EFB008ECAE9 /* MonoplexKR-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MonoplexKR-ExtraLight.ttf"; sourceTree = "<group>"; };
+		9DB324042CA21EFB008ECAE9 /* MonoplexKR-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MonoplexKR-Regular.ttf"; sourceTree = "<group>"; };
+		9DB324052CA21EFB008ECAE9 /* MonoplexKR-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MonoplexKR-Thin.ttf"; sourceTree = "<group>"; };
+		9DB324062CA21EFB008ECAE9 /* MonoplexKR-Text.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MonoplexKR-Text.ttf"; sourceTree = "<group>"; };
+		9DB324192CA24A4F008ECAE9 /* HakgyoansimBunpilR.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HakgyoansimBunpilR.otf; sourceTree = "<group>"; };
+		9DB3241A2CA24A4F008ECAE9 /* HakgyoansimBunpilR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HakgyoansimBunpilR.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +149,11 @@
 		9DB323A02CA0C1A4008ECAE9 /* TipMemory */ = {
 			isa = PBXGroup;
 			children = (
+				9DB323EA2CA21910008ECAE9 /* Resource */,
+				9DB323E12CA12536008ECAE9 /* Views */,
+				9DB323D42CA0C352008ECAE9 /* ViewControllers */,
 				9DB323A12CA0C1A4008ECAE9 /* AppDelegate.swift */,
 				9DB323A32CA0C1A4008ECAE9 /* SceneDelegate.swift */,
-				9DB323A52CA0C1A4008ECAE9 /* ViewController.swift */,
-				9DB323A72CA0C1A4008ECAE9 /* Main.storyboard */,
 				9DB323AD2CA0C1A6008ECAE9 /* Assets.xcassets */,
 				9DB323AF2CA0C1A6008ECAE9 /* LaunchScreen.storyboard */,
 				9DB323B22CA0C1A6008ECAE9 /* Info.plist */,
@@ -128,6 +177,93 @@
 				9DB323C72CA0C1A6008ECAE9 /* TipMemoryUITestsLaunchTests.swift */,
 			);
 			path = TipMemoryUITests;
+			sourceTree = "<group>";
+		};
+		9DB323D42CA0C352008ECAE9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9DB323D62CA0C78E008ECAE9 /* General */,
+				9DB323D52CA0C782008ECAE9 /* Core */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9DB323D52CA0C782008ECAE9 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				9DB323A52CA0C1A4008ECAE9 /* HomeViewController.swift */,
+				9DB323D92CA1185C008ECAE9 /* SearchViewController.swift */,
+				9DB323DD2CA11AE8008ECAE9 /* ProfileViewController.swift */,
+				9DB323DF2CA11DE6008ECAE9 /* LocationViewController.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		9DB323D62CA0C78E008ECAE9 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				9DB323D72CA0C7B8008ECAE9 /* SearchResultsViewController.swift */,
+				9DB323DB2CA11886008ECAE9 /* MainTabBarController.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		9DB323E12CA12536008ECAE9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9DB323E22CA12548008ECAE9 /* HomeView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9DB323E22CA12548008ECAE9 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				9DB323E62CA12778008ECAE9 /* MainView */,
+				9DB323E32CA12559008ECAE9 /* HeaderView */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		9DB323E32CA12559008ECAE9 /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				9DB323E42CA12572008ECAE9 /* HomeHeaderView.swift */,
+				9D7148542CA2594A0082737F /* CategoryView.swift */,
+				9D78CE662CA2788500133FC4 /* CategoryCollectionViewCell.swift */,
+			);
+			path = HeaderView;
+			sourceTree = "<group>";
+		};
+		9DB323E62CA12778008ECAE9 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				9DB323E72CA12789008ECAE9 /* HomeMainView.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		9DB323EA2CA21910008ECAE9 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				9DB323EB2CA21917008ECAE9 /* Font */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		9DB323EB2CA21917008ECAE9 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				9DB324192CA24A4F008ECAE9 /* HakgyoansimBunpilR.otf */,
+				9DB3241A2CA24A4F008ECAE9 /* HakgyoansimBunpilR.ttf */,
+				9DB324012CA21EFB008ECAE9 /* MonoplexKR-Bold.ttf */,
+				9DB324032CA21EFB008ECAE9 /* MonoplexKR-ExtraLight.ttf */,
+				9DB324022CA21EFB008ECAE9 /* MonoplexKR-Medium.ttf */,
+				9DB324042CA21EFB008ECAE9 /* MonoplexKR-Regular.ttf */,
+				9DB324062CA21EFB008ECAE9 /* MonoplexKR-Text.ttf */,
+				9DB324052CA21EFB008ECAE9 /* MonoplexKR-Thin.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,9 +370,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DB324162CA21EFB008ECAE9 /* MonoplexKR-Text.ttf in Resources */,
+				9DB3241E2CA24A4F008ECAE9 /* HakgyoansimBunpilR.ttf in Resources */,
 				9DB323AE2CA0C1A6008ECAE9 /* Assets.xcassets in Resources */,
+				9DB3240D2CA21EFB008ECAE9 /* MonoplexKR-ExtraLight.ttf in Resources */,
+				9DB3241B2CA24A4F008ECAE9 /* HakgyoansimBunpilR.otf in Resources */,
+				9DB324102CA21EFB008ECAE9 /* MonoplexKR-Regular.ttf in Resources */,
+				9DB324072CA21EFB008ECAE9 /* MonoplexKR-Bold.ttf in Resources */,
+				9DB324132CA21EFB008ECAE9 /* MonoplexKR-Thin.ttf in Resources */,
+				9DB3240A2CA21EFB008ECAE9 /* MonoplexKR-Medium.ttf in Resources */,
 				9DB323B12CA0C1A6008ECAE9 /* Base in Resources */,
-				9DB323A92CA0C1A4008ECAE9 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +387,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DB3241C2CA24A4F008ECAE9 /* HakgyoansimBunpilR.otf in Resources */,
+				9DB3241F2CA24A4F008ECAE9 /* HakgyoansimBunpilR.ttf in Resources */,
+				9DB324172CA21EFB008ECAE9 /* MonoplexKR-Text.ttf in Resources */,
+				9DB324112CA21EFB008ECAE9 /* MonoplexKR-Regular.ttf in Resources */,
+				9DB324142CA21EFB008ECAE9 /* MonoplexKR-Thin.ttf in Resources */,
+				9DB3240E2CA21EFB008ECAE9 /* MonoplexKR-ExtraLight.ttf in Resources */,
+				9DB3240B2CA21EFB008ECAE9 /* MonoplexKR-Medium.ttf in Resources */,
+				9DB324082CA21EFB008ECAE9 /* MonoplexKR-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +402,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DB3241D2CA24A4F008ECAE9 /* HakgyoansimBunpilR.otf in Resources */,
+				9DB324202CA24A4F008ECAE9 /* HakgyoansimBunpilR.ttf in Resources */,
+				9DB324182CA21EFB008ECAE9 /* MonoplexKR-Text.ttf in Resources */,
+				9DB324122CA21EFB008ECAE9 /* MonoplexKR-Regular.ttf in Resources */,
+				9DB324152CA21EFB008ECAE9 /* MonoplexKR-Thin.ttf in Resources */,
+				9DB3240F2CA21EFB008ECAE9 /* MonoplexKR-ExtraLight.ttf in Resources */,
+				9DB3240C2CA21EFB008ECAE9 /* MonoplexKR-Medium.ttf in Resources */,
+				9DB324092CA21EFB008ECAE9 /* MonoplexKR-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,10 +420,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D7148552CA2594A0082737F /* CategoryView.swift in Sources */,
+				9DB323DA2CA1185C008ECAE9 /* SearchViewController.swift in Sources */,
 				9DB323AC2CA0C1A4008ECAE9 /* TipMemory.xcdatamodeld in Sources */,
-				9DB323A62CA0C1A4008ECAE9 /* ViewController.swift in Sources */,
+				9DB323A62CA0C1A4008ECAE9 /* HomeViewController.swift in Sources */,
+				9DB323DC2CA11886008ECAE9 /* MainTabBarController.swift in Sources */,
 				9DB323A22CA0C1A4008ECAE9 /* AppDelegate.swift in Sources */,
+				9D78CE672CA2788500133FC4 /* CategoryCollectionViewCell.swift in Sources */,
+				9DB323E82CA12789008ECAE9 /* HomeMainView.swift in Sources */,
 				9DB323A42CA0C1A4008ECAE9 /* SceneDelegate.swift in Sources */,
+				9DB323E52CA12572008ECAE9 /* HomeHeaderView.swift in Sources */,
+				9DB323E02CA11DE6008ECAE9 /* LocationViewController.swift in Sources */,
+				9DB323DE2CA11AE8008ECAE9 /* ProfileViewController.swift in Sources */,
+				9DB323D82CA0C7B8008ECAE9 /* SearchResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,14 +469,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		9DB323A72CA0C1A4008ECAE9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9DB323A82CA0C1A4008ECAE9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9DB323AF2CA0C1A6008ECAE9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -452,7 +612,6 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -485,7 +644,6 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (

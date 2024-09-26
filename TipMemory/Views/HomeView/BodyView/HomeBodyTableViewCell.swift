@@ -12,6 +12,8 @@ class HomeBodyTableViewCell: UITableViewCell {
     // MARK: - Variables
     static let identifier = "HomeBodyTableViewCell"
     
+    var reciveData: [Item] = []
+    
     
     // MARK: - UI Components
     let homeCollectionView: UICollectionView = {
@@ -37,7 +39,7 @@ class HomeBodyTableViewCell: UITableViewCell {
         
         homeCollectionView.delegate = self
         homeCollectionView.dataSource = self
-    
+        
         configureConstraints()
     }
     
@@ -45,7 +47,7 @@ class HomeBodyTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Functions
+    // MARK: - Layouts
     private func configureConstraints() {
         
         let homeCollectionViewConstraints = [
@@ -57,18 +59,27 @@ class HomeBodyTableViewCell: UITableViewCell {
         
         NSLayoutConstraint.activate(homeCollectionViewConstraints)
     }
+    
+    // MARK: - Functions
+    // 데이터를 전달받아 컬렉션 뷰에 적용
+    func configure(with items: [Item]) {
+        self.reciveData = items
+        homeCollectionView.reloadData()  // 데이터를 새로고침하여 컬렉션 뷰 갱신
+    }
 }
 
 
 extension HomeBodyTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return reciveData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeBodyTableCollectionViewCell.identifier, for: indexPath) as? HomeBodyTableCollectionViewCell else { return UICollectionViewCell() }
         
-        // cell.backgroundColor = .systemYellow
+        // 데이터를 컬렉션 뷰 셀에 전달하여 구성
+        cell.configureData(with: reciveData[indexPath.item])
+        
         return cell
     }
 }

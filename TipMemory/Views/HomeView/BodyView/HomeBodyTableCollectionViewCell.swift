@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class HomeBodyTableCollectionViewCell: UICollectionViewCell {
     
@@ -96,5 +97,36 @@ class HomeBodyTableCollectionViewCell: UICollectionViewCell {
         contentView.layer.shadowOpacity = 0.3
         contentView.layer.shadowOffset = CGSize(width: 0, height: 20)
         contentView.layer.shadowRadius = 10
+    }
+    
+    // MARK: - Functions
+    func configureData(with model: Item) {
+        
+        guard let posterPath = model.firstimage,
+              var address = model.addr1,
+              var title = model.title else { return }
+        
+        title = (title.count != 0) ? title : "-"
+        address = (address.count != 0) ? address : "-"
+        
+        let modifiedAddress = getAddressPrefix(fullAddress: address, wordCount: 3)
+        
+        let securePosterURL = posterPath.replacingOccurrences(of: "http://", with: "https://")
+        
+        if let url = URL(string: securePosterURL) {
+            imageView.sd_setImage(with: url)
+        } else {
+            imageView.image = UIImage(systemName: "house.fill")
+        }
+        
+        let modifiedTitle = title.removingParentheses()
+        titleLabel.text = modifiedTitle
+    }
+    
+    // 띄어쓰기로 문자열 구분
+    func getAddressPrefix(fullAddress: String, wordCount: Int) -> String {
+        let components = fullAddress.split(separator: " ")  // 띄어쓰기 기준으로 문자열 분리
+        let prefix = components.prefix(wordCount)          // 원하는 단어 개수만큼 가져옴
+        return prefix.joined(separator: " ")               // 다시 띄어쓰기로 합침
     }
 }

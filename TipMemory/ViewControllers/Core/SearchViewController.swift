@@ -36,8 +36,11 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Search"
+        
         view.backgroundColor = .systemBackground
 //        view.addSubview(searchController.searchBar)  // 서치바를 뷰에 추가
+        
         configureSearchController()
 
     }

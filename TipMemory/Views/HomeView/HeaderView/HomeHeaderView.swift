@@ -126,7 +126,7 @@ class HomeHeaderView: UIView {
             categoryView.trailingAnchor.constraint(equalTo: headerBasicView.trailingAnchor, constant: -15),
             categoryView.topAnchor.constraint(equalTo: locationLabel.bottomAnchor, constant: 15),
             categoryView.heightAnchor.constraint(equalToConstant: 250),
-            // categoryView.bottomAnchor.constraint(equalTo: headerBasicView.bottomAnchor, constant: -15)
+//            categoryView.bottomAnchor.constraint(equalTo: headerBasicView.bottomAnchor, constant: -15)
         ]
         
         NSLayoutConstraint.activate(headerBasicViewConstraints)

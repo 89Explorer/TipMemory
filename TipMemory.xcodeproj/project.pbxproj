@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D025F252CA3B4AB008A6685 /* HomeBodyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D025F242CA3B4AB008A6685 /* HomeBodyTableViewCell.swift */; };
+		9D025F272CA3D760008A6685 /* HomeBodyTableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D025F262CA3D760008A6685 /* HomeBodyTableCollectionViewCell.swift */; };
 		9D7148552CA2594A0082737F /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7148542CA2594A0082737F /* CategoryView.swift */; };
 		9D78CE672CA2788500133FC4 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D78CE662CA2788500133FC4 /* CategoryCollectionViewCell.swift */; };
+		9DAC3E552CA381590017AA6E /* HomeBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAC3E542CA381590017AA6E /* HomeBodyView.swift */; };
 		9DB323A22CA0C1A4008ECAE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB323A12CA0C1A4008ECAE9 /* AppDelegate.swift */; };
 		9DB323A42CA0C1A4008ECAE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB323A32CA0C1A4008ECAE9 /* SceneDelegate.swift */; };
 		9DB323A62CA0C1A4008ECAE9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB323A52CA0C1A4008ECAE9 /* HomeViewController.swift */; };
@@ -46,9 +49,6 @@
 		9DB3241B2CA24A4F008ECAE9 /* HakgyoansimBunpilR.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DB324192CA24A4F008ECAE9 /* HakgyoansimBunpilR.otf */; };
 		9DB3241C2CA24A4F008ECAE9 /* HakgyoansimBunpilR.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DB324192CA24A4F008ECAE9 /* HakgyoansimBunpilR.otf */; };
 		9DB3241D2CA24A4F008ECAE9 /* HakgyoansimBunpilR.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DB324192CA24A4F008ECAE9 /* HakgyoansimBunpilR.otf */; };
-		9DB3241E2CA24A4F008ECAE9 /* HakgyoansimBunpilR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DB3241A2CA24A4F008ECAE9 /* HakgyoansimBunpilR.ttf */; };
-		9DB3241F2CA24A4F008ECAE9 /* HakgyoansimBunpilR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DB3241A2CA24A4F008ECAE9 /* HakgyoansimBunpilR.ttf */; };
-		9DB324202CA24A4F008ECAE9 /* HakgyoansimBunpilR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DB3241A2CA24A4F008ECAE9 /* HakgyoansimBunpilR.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,8 +69,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9D025F242CA3B4AB008A6685 /* HomeBodyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBodyTableViewCell.swift; sourceTree = "<group>"; };
+		9D025F262CA3D760008A6685 /* HomeBodyTableCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBodyTableCollectionViewCell.swift; sourceTree = "<group>"; };
 		9D7148542CA2594A0082737F /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		9D78CE662CA2788500133FC4 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		9DAC3E542CA381590017AA6E /* HomeBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBodyView.swift; sourceTree = "<group>"; };
 		9DB3239E2CA0C1A4008ECAE9 /* TipMemory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipMemory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DB323A12CA0C1A4008ECAE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DB323A32CA0C1A4008ECAE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,7 +101,6 @@
 		9DB324052CA21EFB008ECAE9 /* MonoplexKR-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MonoplexKR-Thin.ttf"; sourceTree = "<group>"; };
 		9DB324062CA21EFB008ECAE9 /* MonoplexKR-Text.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MonoplexKR-Text.ttf"; sourceTree = "<group>"; };
 		9DB324192CA24A4F008ECAE9 /* HakgyoansimBunpilR.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HakgyoansimBunpilR.otf; sourceTree = "<group>"; };
-		9DB3241A2CA24A4F008ECAE9 /* HakgyoansimBunpilR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HakgyoansimBunpilR.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9DAC3E512CA380510017AA6E /* BodyView */ = {
+			isa = PBXGroup;
+			children = (
+				9DAC3E542CA381590017AA6E /* HomeBodyView.swift */,
+				9D025F242CA3B4AB008A6685 /* HomeBodyTableViewCell.swift */,
+				9D025F262CA3D760008A6685 /* HomeBodyTableCollectionViewCell.swift */,
+			);
+			path = BodyView;
+			sourceTree = "<group>";
+		};
 		9DB323952CA0C1A4008ECAE9 = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +233,7 @@
 			children = (
 				9DB323E62CA12778008ECAE9 /* MainView */,
 				9DB323E32CA12559008ECAE9 /* HeaderView */,
+				9DAC3E512CA380510017AA6E /* BodyView */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -255,7 +268,6 @@
 			isa = PBXGroup;
 			children = (
 				9DB324192CA24A4F008ECAE9 /* HakgyoansimBunpilR.otf */,
-				9DB3241A2CA24A4F008ECAE9 /* HakgyoansimBunpilR.ttf */,
 				9DB324012CA21EFB008ECAE9 /* MonoplexKR-Bold.ttf */,
 				9DB324032CA21EFB008ECAE9 /* MonoplexKR-ExtraLight.ttf */,
 				9DB324022CA21EFB008ECAE9 /* MonoplexKR-Medium.ttf */,
@@ -371,7 +383,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DB324162CA21EFB008ECAE9 /* MonoplexKR-Text.ttf in Resources */,
-				9DB3241E2CA24A4F008ECAE9 /* HakgyoansimBunpilR.ttf in Resources */,
 				9DB323AE2CA0C1A6008ECAE9 /* Assets.xcassets in Resources */,
 				9DB3240D2CA21EFB008ECAE9 /* MonoplexKR-ExtraLight.ttf in Resources */,
 				9DB3241B2CA24A4F008ECAE9 /* HakgyoansimBunpilR.otf in Resources */,
@@ -388,7 +399,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DB3241C2CA24A4F008ECAE9 /* HakgyoansimBunpilR.otf in Resources */,
-				9DB3241F2CA24A4F008ECAE9 /* HakgyoansimBunpilR.ttf in Resources */,
 				9DB324172CA21EFB008ECAE9 /* MonoplexKR-Text.ttf in Resources */,
 				9DB324112CA21EFB008ECAE9 /* MonoplexKR-Regular.ttf in Resources */,
 				9DB324142CA21EFB008ECAE9 /* MonoplexKR-Thin.ttf in Resources */,
@@ -403,7 +413,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DB3241D2CA24A4F008ECAE9 /* HakgyoansimBunpilR.otf in Resources */,
-				9DB324202CA24A4F008ECAE9 /* HakgyoansimBunpilR.ttf in Resources */,
 				9DB324182CA21EFB008ECAE9 /* MonoplexKR-Text.ttf in Resources */,
 				9DB324122CA21EFB008ECAE9 /* MonoplexKR-Regular.ttf in Resources */,
 				9DB324152CA21EFB008ECAE9 /* MonoplexKR-Thin.ttf in Resources */,
@@ -421,10 +430,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D7148552CA2594A0082737F /* CategoryView.swift in Sources */,
+				9DAC3E552CA381590017AA6E /* HomeBodyView.swift in Sources */,
 				9DB323DA2CA1185C008ECAE9 /* SearchViewController.swift in Sources */,
 				9DB323AC2CA0C1A4008ECAE9 /* TipMemory.xcdatamodeld in Sources */,
 				9DB323A62CA0C1A4008ECAE9 /* HomeViewController.swift in Sources */,
 				9DB323DC2CA11886008ECAE9 /* MainTabBarController.swift in Sources */,
+				9D025F272CA3D760008A6685 /* HomeBodyTableCollectionViewCell.swift in Sources */,
 				9DB323A22CA0C1A4008ECAE9 /* AppDelegate.swift in Sources */,
 				9D78CE672CA2788500133FC4 /* CategoryCollectionViewCell.swift in Sources */,
 				9DB323E82CA12789008ECAE9 /* HomeMainView.swift in Sources */,
@@ -433,6 +444,7 @@
 				9DB323E02CA11DE6008ECAE9 /* LocationViewController.swift in Sources */,
 				9DB323DE2CA11AE8008ECAE9 /* ProfileViewController.swift in Sources */,
 				9DB323D82CA0C7B8008ECAE9 /* SearchResultsViewController.swift in Sources */,
+				9D025F252CA3B4AB008A6685 /* HomeBodyTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,7 +625,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -645,7 +657,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

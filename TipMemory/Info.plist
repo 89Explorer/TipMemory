@@ -4,7 +4,6 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>HakgyoansimBunpilR.ttf</string>
 		<string>HakgyoansimBunpilR.otf</string>
 		<string>MonoplexKR-Thin.ttf</string>
 		<string>MonoplexKR-Text.ttf</string>

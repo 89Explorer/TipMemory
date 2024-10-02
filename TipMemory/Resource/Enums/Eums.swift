@@ -21,3 +21,9 @@ enum ContentCategory: String {
 }
 
 
+// MARK: - 테이블 내의 컬렉션 뷰를 구분하고자 tag 열거형 
+enum CollectionViewTags: Int {
+    case location = 0
+    case category = 1
+    case popular = 2
+}

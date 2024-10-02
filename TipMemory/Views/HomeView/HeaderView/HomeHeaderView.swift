@@ -101,6 +101,7 @@ class HomeHeaderView: UIView {
         
         let titleLabelConstraints = [
             titleLabel.leadingAnchor.constraint(equalTo: headerBasicView.leadingAnchor, constant: 30),
+            titleLabel.trailingAnchor.constraint(equalTo: headerBasicView.trailingAnchor, constant: -10),
             titleLabel.topAnchor.constraint(equalTo: headerBasicView.topAnchor, constant: 80)
         ]
         

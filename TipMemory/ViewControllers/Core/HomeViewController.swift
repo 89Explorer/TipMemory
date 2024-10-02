@@ -22,7 +22,7 @@ class HomeViewController: UIViewController {
     private var selectedContentTypeId: String = "12"
     
     // 홈 화면 테이블 섹션
-    private var sections: [String] = ["위치 기준 여행지", "카테고리 여행지", "인기 있는 여행지"]
+    private var sections: [String] = ["사용자 위치 기준 여행지", "전국 기준 카테고리 여행지", "인기 있는 여행지"]
     
     // 사용자 위치 정보 확인
     private var userLocation: String = ""
@@ -66,6 +66,9 @@ class HomeViewController: UIViewController {
         
         // 카테고리 별 여행지 받아오는 함수 호출
         getCategorySpotData(contentTypeId: self.selectedContentTypeId)
+        
+        // CSV 파일로 부터 데이터 추출하는 함수 호출
+        loadLocationsFromCSV()
     }
     
     // 네비게이션바를 투명하게 만드는 함수
@@ -76,6 +79,7 @@ class HomeViewController: UIViewController {
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true
     }
+    
     
     // MARK: - Total Layouts
     private func configureConstraints() {
@@ -110,6 +114,12 @@ class HomeViewController: UIViewController {
         homeTableDelegate.register(HomeBodyTableViewCell.self, forCellReuseIdentifier: HomeBodyTableViewCell.identifier)
     }
     
+    // 홈 화면 섹셜 테이블 내 컬렉션뷰 델리게이트 함수
+    private func tableCollectionViewDelegate() {
+        
+        
+    }
+    
     // 테이블 섹션 타이틀 "더보기" 버튼 함수
     @objc func moreButtonTapped(_ sender: UIButton) {
         print("더 보기 버튼 클릭 ")
@@ -137,20 +147,7 @@ class HomeViewController: UIViewController {
     @objc func locationButtonTapped(_ sender: UIButton) {
         // 현재 권한 상태를 확인
         locationManagerDidChangeAuthorization(locationManager)
-        
-//        let authorizationStatus: CLAuthorizationStatus
-//        
-//        if #available(iOS 14.0, *) {
-//            authorizationStatus = locationManager.authorizationStatus
-//        } else {
-//            authorizationStatus = CLLocationManager.authorizationStatus()
-//        }
-//        
-//        checkUserCurrentLocationAuthorization(authorizationStatus)
-        
     }
-
-
     
     // 사용자의 위치 서비스 활성화 여부 확인 함수
     func checkUserDeviceLocationServiceAuthorization() {
@@ -203,7 +200,7 @@ class HomeViewController: UIViewController {
             // 시스템 설정으로 유도하는 커스텀 얼럿
             print("Restricted or denied")
             showRequestLocationServiceAlert()
-        
+            
             
         case .authorizedWhenInUse:
             // 앱을 사용중일 때, 위치 서비스를 이용할 수 있는 상태
@@ -251,13 +248,21 @@ class HomeViewController: UIViewController {
             }
             
             // 지번 주소 구성
-            // let country = placemark.country ?? ""
-            let administrativeArea = placemark.administrativeArea ?? ""
-            let locality = placemark.locality ?? ""
-            let subLocality = placemark.subLocality ?? ""
-            // thoroughfare와 subThoroughfare는 생략
+            let administrativeArea = placemark.administrativeArea ?? ""        // 경기도
+            let locality = placemark.locality ?? ""                            // 고양시
+            let subAdministrativeArea = placemark.subAdministrativeArea ?? ""  // 덕양구 (자치구)
+            let subLocality = placemark.subLocality ?? ""                      // 동 (화정동)
             
-            let jibunAddress = "\(administrativeArea) \(locality) \(subLocality)"
+            var jibunAddress = ""
+            
+            // "특별시" 또는 "광역시" 처리
+            if administrativeArea.hasSuffix("특별시") || administrativeArea.hasSuffix("광역시") {
+                // 특별시 또는 광역시인 경우, administrativeArea 생략하고 자치구(subAdministrativeArea)도 추가
+                jibunAddress = "\(locality) \(subAdministrativeArea) \(subLocality)"
+            } else {
+                // 그 외 지역은 그대로 표시 (경기도 같은 지역은 administrativeArea 포함)
+                jibunAddress = "\(administrativeArea) \(locality) \(subAdministrativeArea) \(subLocality)"
+            }
             
             // userLocation에 값을 할당
             self.userLocation = jibunAddress
@@ -269,7 +274,7 @@ class HomeViewController: UIViewController {
     
     // contentTypeId를 통해 카테고리 별 관광지 정보를 받아오는 함수
     func getCategorySpotData(contentTypeId: String) {
-        NetworkManager.shared.getCommonData(contentTypeId: contentTypeId) { [weak self] results in
+        NetworkManager.shared.getKeywordnData(contentTypeId: contentTypeId) { [weak self] results in
             switch results {
             case .success(let items):
                 self?.categoryReceivedItems = items.response.body.items.item
@@ -281,38 +286,123 @@ class HomeViewController: UIViewController {
             }
         }
     }
+    
+    // contentTypeId, mapX, mapY를 통해 위치 + 카테고리 별 관광지 정보를 받아오는 함수
+    func getLocationSpotData(mapX: String, mapY: String, contentTypeId: String) {
+        NetworkManager.shared.getSpotDataFromLocation(mapX: self.userLongitude, mapY: self.userLatitude, contentTypeId: self.selectedContentTypeId) { [weak self] results in
+            switch results {
+            case .success(let item):
+                // 데이터를 받아온 후 첫 번째 아이템을 사용
+                self?.locationReceivedItems = item
+                DispatchQueue.main.async {
+                    self?.homeView.homeBodyView.homeBodyTable.reloadData()
+                }
+            case .failure(let error):
+                print("Failed to fetch data:\(error)")
+            }
+        }
+    }
+    
+    // LocationCode를 통해 사용자 위치에 따른 주소 코드 반환 함수
+    func loadLocationsFromCSV() {
+        guard let path = Bundle.main.path(forResource: "LocationCode", ofType: "csv") else { return }
+        parseCSVAt(url: URL(fileURLWithPath: path))
+    }
+    
+    
+    // 상세페이지로 이동하는 함수
+    func navigateToDetailPage(with model: Item) {
+        let detailVC = DetailViewController()
+        detailVC.model = model
+        self.navigationController?.pushViewController(detailVC, animated: true)
+    }
+    
+    func presentToDetailPage() {
+        let detailVC = DetailViewController()
+        
+        detailVC.modalPresentationStyle = .fullScreen
+        self.present(detailVC, animated: true)
+    }
 }
 
+
+// MARK: - extension CollectionView
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categories.count
+        
+        // 카테고리 부분 컬렉션 뷰
+        if collectionView == homeView.homeheaderView.categoryView.categoryCollectionView {
+            return categories.count
+        }
+        
+        
+        // 테이블뷰에 있는 컬렉션 뷰
+        
+        guard let collectionViewTag = CollectionViewTags(rawValue: collectionView.tag) else { return 0 }
+        
+        switch collectionViewTag {
+        case .location:
+            return locationReceivedItems.count
+        case .category:
+            return categoryReceivedItems.count
+        case .popular:
+            return popularReceivedItems.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as? CategoryCollectionViewCell else { return UICollectionViewCell() }
         
-        let title = categories[indexPath.row]
-        let image = categoriesImage[indexPath.row]
-        let isSelected = indexPath.item == categorySelectedIndex
+        // 카테고리 있는 부분의 컬렉션 뷰
+        if collectionView == homeView.homeheaderView.categoryView.categoryCollectionView {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as? CategoryCollectionViewCell else { return UICollectionViewCell() }
+            
+            let title = categories[indexPath.row]
+            let image = categoriesImage[indexPath.row]
+            let isSelected = indexPath.item == categorySelectedIndex
+            
+            cell.configureCategory(title: title, isSelected: isSelected, image: image)
+            
+            return cell
+        }
         
-        cell.configureCategory(title: title, isSelected: isSelected, image: image)
+        // 테이블뷰에 있는 컬렉션 뷰
+        guard let collectionViewTag = CollectionViewTags(rawValue: collectionView.tag) else { return UICollectionViewCell() }
         
-        return cell
+        switch collectionViewTag {
+        case .location:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeBodyTableCollectionViewCell.identifier, for: indexPath) as? HomeBodyTableCollectionViewCell else { return UICollectionViewCell() }
+            cell.configureData(with: locationReceivedItems[indexPath.item])
+            return cell
+            
+        case .category:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeBodyTableCollectionViewCell.identifier, for: indexPath) as? HomeBodyTableCollectionViewCell else { return UICollectionViewCell() }
+            cell.configureData(with: categoryReceivedItems[indexPath.item])
+            return cell
+            
+        case .popular:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeBodyTableCollectionViewCell.identifier, for: indexPath) as? HomeBodyTableCollectionViewCell else { return UICollectionViewCell() }
+            cell.configureData(with: popularReceivedItems[indexPath.item])
+            return cell
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        // 카테고리 있는 부분의 컬렉션 뷰
         if collectionView == homeView.homeheaderView.categoryView.categoryCollectionView {
             let previousSelectedIndex = categorySelectedIndex    // 이전에 선택된 인덱스 저장
             categorySelectedIndex = indexPath.item    // 새로운 선택 인덱스로 업데이트
             
+            print("Selected category index: \(categorySelectedIndex)")
+            
             let selectedIndexPath = IndexPath(item: categorySelectedIndex, section: 0)
             let previousSelectedIndexPath = IndexPath(item: previousSelectedIndex, section: 0)
             
+            
             // 이전 선택 항목이 유효한 경우에만 리로드
             if previousSelectedIndex != categorySelectedIndex {
-                homeView.homeheaderView.categoryView.categoryCollectionView.reloadData()
+                homeView.homeheaderView.categoryView.categoryCollectionView.reloadItems(at: [selectedIndexPath, previousSelectedIndexPath])
             }
             
             // 필요한 데이터 처리
@@ -321,57 +411,99 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             case 0:
                 selectedCategory = .attractions
                 selectedContentTypeId = selectedCategory!.rawValue
+                print("Category: attractions")
             case 1:
                 selectedCategory = .facilities
                 selectedContentTypeId = selectedCategory!.rawValue
+                print("Category: facilities")
             case 2:
                 selectedCategory = .restaurants
                 selectedContentTypeId = selectedCategory!.rawValue
+                print("Category: restaurants")
             case 3:
                 selectedCategory = .course
                 selectedContentTypeId = selectedCategory!.rawValue
+                print("Category: course")
             case 4:
                 selectedCategory = .shopping
                 selectedContentTypeId = selectedCategory!.rawValue
+                print("Category: shopping")
             default:
+                print("Unknown category")
                 break
             }
             
             if let category = selectedCategory {
                 getCategorySpotData(contentTypeId: category.contentTypeId)
-                NetworkManager.shared.getSpotDataFromLocation(mapX: self.userLongitude, mapY: self.userLatitude, contentTypeId: self.selectedContentTypeId) { [weak self] results in
-                    switch results {
-                    case .success(let item):
-                        self?.locationReceivedItems = item
-                        DispatchQueue.main.async {
-                            self?.homeView.homeBodyView.homeBodyTable.reloadData()
-                        }
-                    case .failure(let error):
-                        print(error.localizedDescription)
-                    }
-                }
+                getLocationSpotData(mapX: self.userLongitude, mapY: self.userLatitude, contentTypeId: self.selectedContentTypeId)
+                // 테이블 뷰의 컬렉션 뷰를 갱신
+                homeView.homeBodyView.homeBodyTable.reloadData()
             }
         }
         
+        
+        
+        // 카테고리 컬렉션뷰를 눌럿을때 발생하는 오류를 개선하기 위한 코드
+        // 테이블뷰 내의 컬렉션 뷰에서 셀 선택 시
+        else if let collectionViewTag = CollectionViewTags(rawValue: collectionView.tag) {
+            switch collectionViewTag {
+            case .location:
+                let selectedItem = locationReceivedItems[indexPath.item]
+                navigateToDetailPage(with: selectedItem)
+                // presentToDetailPage()
+            case .category:
+                let selectedItem = categoryReceivedItems[indexPath.item]
+                navigateToDetailPage(with: selectedItem)
+                // presentToDetailPage()
+            case .popular:
+                let selectedItem = popularReceivedItems[indexPath.item]
+                navigateToDetailPage(with: selectedItem)
+                // presentToDetailPage()
+            }
+        }
+        
+        //                else if collectionView.tag == 0{
+        //                    let selectedItem = locationReceivedItems[indexPath.item]
+        //                    navigateToDetailPage()
+        //                }
+        //                else if collectionView.tag == 1{
+        //                    let selectedItem = categoryReceivedItems[indexPath.item]
+        //                    navigateToDetailPage()
+        //                }
+        //                else if collectionView.tag == 2{
+        //                    let selectedItem = popularReceivedItems[indexPath.item]
+        //                    navigateToDetailPage()
+        //                }
     }
 }
 
+
+// MARK: - extension TableView
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
+        
         return 3
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return 1
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeBodyTableViewCell.identifier) as? HomeBodyTableViewCell else { return UITableViewCell() }
-        let selectedIndex = indexPath.section
+        // cell.delegate = self
+        cell.homeCollectionView.delegate = self
+        cell.homeCollectionView.dataSource = self
+        cell.homeCollectionView.tag = indexPath.section  // 각 컬렉션 뷰에 테이블 섹션을 구분하는 태그 부여
         
-        switch selectedIndex {
-        case 0 :
+        // 테이블 셀 마다 켤렉션 뷰가 다르게 동작해야 하기 때문에
+        // 각 셀의 UICollectionView에 tag값을 부여하여 컬렉션 뷰 구분
+        switch indexPath.section {
+        case 0:
             cell.configure(with: locationReceivedItems)
         case 1:
             cell.configure(with: categoryReceivedItems)
@@ -428,6 +560,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+// MARK: - extension ScrollView
 extension HomeViewController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -439,7 +572,7 @@ extension HomeViewController: UIScrollViewDelegate {
 }
 
 
-// MARK: - 위치 정보 delegate 메서드 구현
+// MARK: - extension 위치 정보 delegate 메서드 구현
 extension HomeViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -457,21 +590,20 @@ extension HomeViewController: CLLocationManagerDelegate {
                     self.homeView.homeheaderView.locationLabel.text = "현재 위치: \(userLocation)"
                     
                     // 위치 정보를 통해 관광지 정보 가져오기
-                    NetworkManager.shared.getSpotDataFromLocation(mapX: self.userLongitude, mapY: self.userLatitude, contentTypeId: self.selectedContentTypeId) { [weak self] results in
-                        switch results {
-                        case .success(let item):
-                            // 데이터를 받아온 후 첫 번째 아이템을 사용
-                            self?.locationReceivedItems = item
-                            DispatchQueue.main.async {
-                                self?.homeView.homeBodyView.homeBodyTable.reloadData()
-                            }
-                        case .failure(let error):
-                            print("Failed to fetch data:\(error)")
-                        }
-                    }
+                    self.getLocationSpotData(mapX: self.userLongitude, mapY: self.userLatitude, contentTypeId: self.selectedContentTypeId)
                 }
             }
         }
         
     }
 }
+
+// 델리게이트 패턴을 사용하여 테이블 뷰 내에 컬렉션뷰셀을 누르면 상세페이지로 이동하는 확장
+//extension HomeViewController: TableViewCollectionViewCellDelegate {
+//    func tableViewCollectionViewCellDidTapped(_ cell: HomeBodyTableViewCell) {
+//        DispatchQueue.main.async {
+//            let detailVC = DetailViewController()
+//            self.navigationController?.pushViewController(detailVC, animated: true)
+//        }
+//    }
+//}

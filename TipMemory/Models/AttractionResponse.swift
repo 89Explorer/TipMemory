@@ -61,4 +61,5 @@ struct Item: Codable {
     let tel: String?
     let title: String?
     let zipcode: String?
+    let overview: String?
 }

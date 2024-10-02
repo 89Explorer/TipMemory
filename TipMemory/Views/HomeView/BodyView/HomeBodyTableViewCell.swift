@@ -11,9 +11,9 @@ class HomeBodyTableViewCell: UITableViewCell {
     
     // MARK: - Variables
     static let identifier = "HomeBodyTableViewCell"
-    
     var reciveData: [Item] = []
     
+    weak var delegate : TableViewCollectionViewCellDelegate?
     
     // MARK: - UI Components
     let homeCollectionView: UICollectionView = {
@@ -37,8 +37,8 @@ class HomeBodyTableViewCell: UITableViewCell {
         // contentView.backgroundColor = .systemBackground
         contentView.addSubview(homeCollectionView)
         
-        homeCollectionView.delegate = self
-        homeCollectionView.dataSource = self
+//        homeCollectionView.delegate = self
+//        homeCollectionView.dataSource = self
         
         configureConstraints()
     }
@@ -79,7 +79,17 @@ extension HomeBodyTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
         
         // 데이터를 컬렉션 뷰 셀에 전달하여 구성
         cell.configureData(with: reciveData[indexPath.item])
-        
         return cell
     }
+    
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        self.delegate?.tableViewCollectionViewCellDidTapped(self)
+//    }
+}
+
+
+// MARK: - Protocol
+// 테이블뷰 내에 컬렉션뷰 선택 관련 대리자선언
+protocol TableViewCollectionViewCellDelegate: AnyObject {
+    func tableViewCollectionViewCellDidTapped(_ cell: HomeBodyTableViewCell)
 }

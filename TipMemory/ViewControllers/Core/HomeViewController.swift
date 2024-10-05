@@ -28,6 +28,7 @@ class HomeViewController: UIViewController {
     private var userLocation: String = ""
     private var userLatitude: String = ""
     private var userLongitude: String = ""
+    static var locationCode: [[String]]?
     
     
     // 사용자 위치 서비스 관리 객체
@@ -39,6 +40,10 @@ class HomeViewController: UIViewController {
     var locationReceivedItems: [Item] = []
     var categoryReceivedItems: [Item] = []
     var popularReceivedItems: [Item] = []
+    
+    // 방문자 접속 추이 확인을 위한 변수
+    var areaCode: String = ""
+    var sigunguCode: String = ""
     
     
     
@@ -61,14 +66,15 @@ class HomeViewController: UIViewController {
         alarmButton()
         locationButton()
         
+        // CSV 파일로 부터 데이터 추출하는 함수 호출
+        // self.loadLocationsFromCSV()
+        
         // 위치 서비스 활성화 여부 확인 함수 호출
         checkUserDeviceLocationServiceAuthorization()
         
         // 카테고리 별 여행지 받아오는 함수 호출
         getCategorySpotData(contentTypeId: self.selectedContentTypeId)
         
-        // CSV 파일로 부터 데이터 추출하는 함수 호출
-        loadLocationsFromCSV()
     }
     
     // 네비게이션바를 투명하게 만드는 함수
@@ -266,8 +272,6 @@ class HomeViewController: UIViewController {
             
             // userLocation에 값을 할당
             self.userLocation = jibunAddress
-            
-            // 완료된 후 jibunAddress를 completion handler로 전달
             completion(jibunAddress)
         }
     }
@@ -306,9 +310,9 @@ class HomeViewController: UIViewController {
     // LocationCode를 통해 사용자 위치에 따른 주소 코드 반환 함수
     func loadLocationsFromCSV() {
         guard let path = Bundle.main.path(forResource: "LocationCode", ofType: "csv") else { return }
-        parseCSVAt(url: URL(fileURLWithPath: path))
+        
+        HomeViewController.locationCode = parseCSVAt(url: URL(fileURLWithPath: path))
     }
-    
     
     // 상세페이지로 이동하는 함수
     func navigateToDetailPage(with model: Item) {
@@ -373,6 +377,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         case .location:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeBodyTableCollectionViewCell.identifier, for: indexPath) as? HomeBodyTableCollectionViewCell else { return UICollectionViewCell() }
             cell.configureData(with: locationReceivedItems[indexPath.item])
+            
             return cell
             
         case .category:

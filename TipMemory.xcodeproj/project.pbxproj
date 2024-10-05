@@ -25,14 +25,16 @@
 		9D41AFF62CA7668E008F2C5D /* DetailMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D41AFF52CA7668E008F2C5D /* DetailMainView.swift */; };
 		9D41AFF92CA768E7008F2C5D /* DetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D41AFF82CA768E7008F2C5D /* DetailHeaderView.swift */; };
 		9D41B0022CA8EB94008F2C5D /* DetailImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D41B0012CA8EB94008F2C5D /* DetailImageCollectionViewCell.swift */; };
+		9D5177882CB0CD4100AA2E03 /* YoutubeSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5177872CB0CD4100AA2E03 /* YoutubeSearchResponse.swift */; };
 		9D56B6E82CA5490E006A1893 /* AttractionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D56B6E72CA5490E006A1893 /* AttractionResponse.swift */; };
 		9D56B6EF2CA56E70006A1893 /* Eums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D56B6EE2CA56E70006A1893 /* Eums.swift */; };
 		9D56B6F02CA56E70006A1893 /* Eums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D56B6EE2CA56E70006A1893 /* Eums.swift */; };
 		9D56B6F12CA56E70006A1893 /* Eums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D56B6EE2CA56E70006A1893 /* Eums.swift */; };
+		9D6C69CC2CAF841700DE12A9 /* VisitorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C69CB2CAF841700DE12A9 /* VisitorResponse.swift */; };
 		9D7148552CA2594A0082737F /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7148542CA2594A0082737F /* CategoryView.swift */; };
 		9D78CE672CA2788500133FC4 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D78CE662CA2788500133FC4 /* CategoryCollectionViewCell.swift */; };
-		9D996E1C2CA59CC4009922FA /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 9D996E1B2CA59CC4009922FA /* SDWebImage */; };
-		9D996E1E2CA59CC4009922FA /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9D996E1D2CA59CC4009922FA /* SDWebImageMapKit */; };
+		9D81F6222CADECE7001B78A6 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 9D81F6212CADECE7001B78A6 /* SDWebImage */; };
+		9D81F6282CADED15001B78A6 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9D81F6272CADED15001B78A6 /* SDWebImageMapKit */; };
 		9D996E202CA5A2AB009922FA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D996E1F2CA5A2AB009922FA /* Extensions.swift */; };
 		9D996E212CA5A2AB009922FA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D996E1F2CA5A2AB009922FA /* Extensions.swift */; };
 		9D996E222CA5A2AB009922FA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D996E1F2CA5A2AB009922FA /* Extensions.swift */; };
@@ -74,21 +76,13 @@
 		9DB3241B2CA24A4F008ECAE9 /* HakgyoansimBunpilR.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DB324192CA24A4F008ECAE9 /* HakgyoansimBunpilR.otf */; };
 		9DB3241C2CA24A4F008ECAE9 /* HakgyoansimBunpilR.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DB324192CA24A4F008ECAE9 /* HakgyoansimBunpilR.otf */; };
 		9DB3241D2CA24A4F008ECAE9 /* HakgyoansimBunpilR.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DB324192CA24A4F008ECAE9 /* HakgyoansimBunpilR.otf */; };
+		9DC7969E2CADF9A10003AAAC /* CheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC7969D2CADF9A10003AAAC /* CheckViewController.swift */; };
 		9DD332E82CAA3626004F1F77 /* ImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD332E72CAA3626004F1F77 /* ImageResponse.swift */; };
-		9DD332EA2CAA3A52004F1F77 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 9DD332E92CAA3A52004F1F77 /* SDWebImage */; };
-		9DD332EC2CAA3A52004F1F77 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9DD332EB2CAA3A52004F1F77 /* SDWebImageMapKit */; };
 		9DD332EF2CAA61CC004F1F77 /* DetailBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD332EE2CAA61CC004F1F77 /* DetailBodyView.swift */; };
 		9DD332F12CAB311E004F1F77 /* AttractionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD332F02CAB311E004F1F77 /* AttractionInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9DB323B82CA0C1A6008ECAE9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9DB323962CA0C1A4008ECAE9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9DB3239D2CA0C1A4008ECAE9;
-			remoteInfo = TipMemory;
-		};
 		9DB323C22CA0C1A6008ECAE9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9DB323962CA0C1A4008ECAE9 /* Project object */;
@@ -99,6 +93,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		593587D140235F178E786AC2 /* Pods-TipMemoryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipMemoryTests.debug.xcconfig"; path = "Target Support Files/Pods-TipMemoryTests/Pods-TipMemoryTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6C49F237705E4233441D7732 /* Pods-TipMemory-TipMemoryUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipMemory-TipMemoryUITests.debug.xcconfig"; path = "Target Support Files/Pods-TipMemory-TipMemoryUITests/Pods-TipMemory-TipMemoryUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8539367EDC3C517D683B05F6 /* Pods-TipMemory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipMemory.release.xcconfig"; path = "Target Support Files/Pods-TipMemory/Pods-TipMemory.release.xcconfig"; sourceTree = "<group>"; };
+		8C4D36A92642ED5D273CBF06 /* Pods-TipMemoryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipMemoryTests.release.xcconfig"; path = "Target Support Files/Pods-TipMemoryTests/Pods-TipMemoryTests.release.xcconfig"; sourceTree = "<group>"; };
+		95AFC471673C42083E134106 /* Pods_TipMemory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TipMemory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D01E9D22CAB7616006A2453 /* UnifiedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnifiedResponse.swift; sourceTree = "<group>"; };
 		9D01E9D72CAC81CC006A2453 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		9D025F242CA3B4AB008A6685 /* HomeBodyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBodyTableViewCell.swift; sourceTree = "<group>"; };
@@ -111,8 +110,10 @@
 		9D41AFF52CA7668E008F2C5D /* DetailMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMainView.swift; sourceTree = "<group>"; };
 		9D41AFF82CA768E7008F2C5D /* DetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeaderView.swift; sourceTree = "<group>"; };
 		9D41B0012CA8EB94008F2C5D /* DetailImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		9D5177872CB0CD4100AA2E03 /* YoutubeSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeSearchResponse.swift; sourceTree = "<group>"; };
 		9D56B6E72CA5490E006A1893 /* AttractionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionResponse.swift; sourceTree = "<group>"; };
 		9D56B6EE2CA56E70006A1893 /* Eums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eums.swift; sourceTree = "<group>"; };
+		9D6C69CB2CAF841700DE12A9 /* VisitorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorResponse.swift; sourceTree = "<group>"; };
 		9D7148542CA2594A0082737F /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		9D78CE662CA2788500133FC4 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		9D996E1F2CA5A2AB009922FA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -144,9 +145,15 @@
 		9DB324052CA21EFB008ECAE9 /* MonoplexKR-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MonoplexKR-Thin.ttf"; sourceTree = "<group>"; };
 		9DB324062CA21EFB008ECAE9 /* MonoplexKR-Text.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MonoplexKR-Text.ttf"; sourceTree = "<group>"; };
 		9DB324192CA24A4F008ECAE9 /* HakgyoansimBunpilR.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HakgyoansimBunpilR.otf; sourceTree = "<group>"; };
+		9DC796972CADF4990003AAAC /* project.pbxproj */ = {isa = PBXFileReference; lastKnownFileType = text.pbxproject; name = project.pbxproj; path = TipMemory.xcodeproj/project.pbxproj; sourceTree = "<group>"; };
+		9DC7969D2CADF9A10003AAAC /* CheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckViewController.swift; sourceTree = "<group>"; };
 		9DD332E72CAA3626004F1F77 /* ImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResponse.swift; sourceTree = "<group>"; };
 		9DD332EE2CAA61CC004F1F77 /* DetailBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBodyView.swift; sourceTree = "<group>"; };
 		9DD332F02CAB311E004F1F77 /* AttractionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionInfo.swift; sourceTree = "<group>"; };
+		BCF7D3180445CF096B51DB20 /* Pods-TipMemory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipMemory.debug.xcconfig"; path = "Target Support Files/Pods-TipMemory/Pods-TipMemory.debug.xcconfig"; sourceTree = "<group>"; };
+		E4E96F9DC22E8FA6EE42A270 /* Pods-TipMemory-TipMemoryUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TipMemory-TipMemoryUITests.release.xcconfig"; path = "Target Support Files/Pods-TipMemory-TipMemoryUITests/Pods-TipMemory-TipMemoryUITests.release.xcconfig"; sourceTree = "<group>"; };
+		EA6CA37391FB2FF43A35C09E /* Pods_TipMemoryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TipMemoryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F29A7C32E88F47556FA3944D /* Pods_TipMemory_TipMemoryUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TipMemory_TipMemoryUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,10 +161,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DD332EA2CAA3A52004F1F77 /* SDWebImage in Frameworks */,
-				9D996E1E2CA59CC4009922FA /* SDWebImageMapKit in Frameworks */,
-				9DD332EC2CAA3A52004F1F77 /* SDWebImageMapKit in Frameworks */,
-				9D996E1C2CA59CC4009922FA /* SDWebImage in Frameworks */,
+				9D81F6222CADECE7001B78A6 /* SDWebImage in Frameworks */,
+				9D81F6282CADED15001B78A6 /* SDWebImageMapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +183,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0CB019B840DC88DE84AF610B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BCF7D3180445CF096B51DB20 /* Pods-TipMemory.debug.xcconfig */,
+				8539367EDC3C517D683B05F6 /* Pods-TipMemory.release.xcconfig */,
+				6C49F237705E4233441D7732 /* Pods-TipMemory-TipMemoryUITests.debug.xcconfig */,
+				E4E96F9DC22E8FA6EE42A270 /* Pods-TipMemory-TipMemoryUITests.release.xcconfig */,
+				593587D140235F178E786AC2 /* Pods-TipMemoryTests.debug.xcconfig */,
+				8C4D36A92642ED5D273CBF06 /* Pods-TipMemoryTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9BBD2AED8C674F66C613A0DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9DC796972CADF4990003AAAC /* project.pbxproj */,
+				95AFC471673C42083E134106 /* Pods_TipMemory.framework */,
+				F29A7C32E88F47556FA3944D /* Pods_TipMemory_TipMemoryUITests.framework */,
+				EA6CA37391FB2FF43A35C09E /* Pods_TipMemoryTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9D01E9D62CAC81B5006A2453 /* Functions */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +222,8 @@
 				9DD332E72CAA3626004F1F77 /* ImageResponse.swift */,
 				9DD332F02CAB311E004F1F77 /* AttractionInfo.swift */,
 				9D01E9D22CAB7616006A2453 /* UnifiedResponse.swift */,
+				9D6C69CB2CAF841700DE12A9 /* VisitorResponse.swift */,
+				9D5177872CB0CD4100AA2E03 /* YoutubeSearchResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -281,6 +312,8 @@
 				9DB323BA2CA0C1A6008ECAE9 /* TipMemoryTests */,
 				9DB323C42CA0C1A6008ECAE9 /* TipMemoryUITests */,
 				9DB3239F2CA0C1A4008ECAE9 /* Products */,
+				0CB019B840DC88DE84AF610B /* Pods */,
+				9BBD2AED8C674F66C613A0DC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -356,6 +389,7 @@
 				9DB323DB2CA11886008ECAE9 /* MainTabBarController.swift */,
 				9D025F6A2CA50F8F008A6685 /* AlarmViewController.swift */,
 				9D41AFF12CA6A7B7008F2C5D /* DetailViewController.swift */,
+				9DC7969D2CADF9A10003AAAC /* CheckViewController.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -439,9 +473,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9DB323CB2CA0C1A6008ECAE9 /* Build configuration list for PBXNativeTarget "TipMemory" */;
 			buildPhases = (
+				B1BA5B6A307F1D26A396EB10 /* [CP] Check Pods Manifest.lock */,
 				9DB3239A2CA0C1A4008ECAE9 /* Sources */,
 				9DB3239B2CA0C1A4008ECAE9 /* Frameworks */,
 				9DB3239C2CA0C1A4008ECAE9 /* Resources */,
+				FF27F4ECB17D25B1B43CAB23 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -456,6 +492,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9DB323CE2CA0C1A6008ECAE9 /* Build configuration list for PBXNativeTarget "TipMemoryTests" */;
 			buildPhases = (
+				4E8FC0945FFEC949FB8A8754 /* [CP] Check Pods Manifest.lock */,
 				9DB323B32CA0C1A6008ECAE9 /* Sources */,
 				9DB323B42CA0C1A6008ECAE9 /* Frameworks */,
 				9DB323B52CA0C1A6008ECAE9 /* Resources */,
@@ -463,7 +500,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				9DB323B92CA0C1A6008ECAE9 /* PBXTargetDependency */,
 			);
 			name = TipMemoryTests;
 			productName = TipMemoryTests;
@@ -474,9 +510,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9DB323D12CA0C1A6008ECAE9 /* Build configuration list for PBXNativeTarget "TipMemoryUITests" */;
 			buildPhases = (
+				0879611B8047D77C7CD2F2FF /* [CP] Check Pods Manifest.lock */,
 				9DB323BD2CA0C1A6008ECAE9 /* Sources */,
 				9DB323BE2CA0C1A6008ECAE9 /* Frameworks */,
 				9DB323BF2CA0C1A6008ECAE9 /* Resources */,
+				33A8891633AEDC660A0F6684 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -521,7 +559,7 @@
 			);
 			mainGroup = 9DB323952CA0C1A4008ECAE9;
 			packageReferences = (
-				9D996E1A2CA59CC4009922FA /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				9D43BD012CADE9FA008EE2AF /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 9DB3239F2CA0C1A4008ECAE9 /* Products */;
 			projectDirPath = "";
@@ -584,6 +622,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0879611B8047D77C7CD2F2FF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TipMemory-TipMemoryUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		33A8891633AEDC660A0F6684 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TipMemory-TipMemoryUITests/Pods-TipMemory-TipMemoryUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TipMemory-TipMemoryUITests/Pods-TipMemory-TipMemoryUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TipMemory-TipMemoryUITests/Pods-TipMemory-TipMemoryUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E8FC0945FFEC949FB8A8754 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TipMemoryTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1BA5B6A307F1D26A396EB10 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TipMemory-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF27F4ECB17D25B1B43CAB23 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TipMemory/Pods-TipMemory-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TipMemory/Pods-TipMemory-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TipMemory/Pods-TipMemory-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9DB3239A2CA0C1A4008ECAE9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -606,9 +747,11 @@
 				9D025F272CA3D760008A6685 /* HomeBodyTableCollectionViewCell.swift in Sources */,
 				9DB323A22CA0C1A4008ECAE9 /* AppDelegate.swift in Sources */,
 				9D78CE672CA2788500133FC4 /* CategoryCollectionViewCell.swift in Sources */,
+				9DC7969E2CADF9A10003AAAC /* CheckViewController.swift in Sources */,
 				9DB323E82CA12789008ECAE9 /* HomeMainView.swift in Sources */,
 				9DB323A42CA0C1A4008ECAE9 /* SceneDelegate.swift in Sources */,
 				9D41AFF22CA6A7B7008F2C5D /* DetailViewController.swift in Sources */,
+				9D6C69CC2CAF841700DE12A9 /* VisitorResponse.swift in Sources */,
 				9DD332E82CAA3626004F1F77 /* ImageResponse.swift in Sources */,
 				9D996E202CA5A2AB009922FA /* Extensions.swift in Sources */,
 				9DB323E52CA12572008ECAE9 /* HomeHeaderView.swift in Sources */,
@@ -617,6 +760,7 @@
 				9DB323DE2CA11AE8008ECAE9 /* ProfileViewController.swift in Sources */,
 				9DB323D82CA0C7B8008ECAE9 /* SearchResultsViewController.swift in Sources */,
 				9D025F252CA3B4AB008A6685 /* HomeBodyTableViewCell.swift in Sources */,
+				9D5177882CB0CD4100AA2E03 /* YoutubeSearchResponse.swift in Sources */,
 				9D56B6E82CA5490E006A1893 /* AttractionResponse.swift in Sources */,
 				9D56B6F12CA56E70006A1893 /* Eums.swift in Sources */,
 				9D41B0022CA8EB94008F2C5D /* DetailImageCollectionViewCell.swift in Sources */,
@@ -651,11 +795,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9DB323B92CA0C1A6008ECAE9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9DB3239D2CA0C1A4008ECAE9 /* TipMemory */;
-			targetProxy = 9DB323B82CA0C1A6008ECAE9 /* PBXContainerItemProxy */;
-		};
 		9DB323C32CA0C1A6008ECAE9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9DB3239D2CA0C1A4008ECAE9 /* TipMemory */;
@@ -796,12 +935,14 @@
 		};
 		9DB323CC2CA0C1A6008ECAE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCF7D3180445CF096B51DB20 /* Pods-TipMemory.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P9NXT375QP;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TipMemory/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
@@ -828,12 +969,14 @@
 		};
 		9DB323CD2CA0C1A6008ECAE9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8539367EDC3C517D683B05F6 /* Pods-TipMemory.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P9NXT375QP;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TipMemory/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
@@ -860,8 +1003,8 @@
 		};
 		9DB323CF2CA0C1A6008ECAE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 593587D140235F178E786AC2 /* Pods-TipMemoryTests.debug.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P9NXT375QP;
@@ -879,8 +1022,8 @@
 		};
 		9DB323D02CA0C1A6008ECAE9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C4D36A92642ED5D273CBF06 /* Pods-TipMemoryTests.release.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P9NXT375QP;
@@ -898,6 +1041,7 @@
 		};
 		9DB323D22CA0C1A6008ECAE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C49F237705E4233441D7732 /* Pods-TipMemory-TipMemoryUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -915,6 +1059,7 @@
 		};
 		9DB323D32CA0C1A6008ECAE9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4E96F9DC22E8FA6EE42A270 /* Pods-TipMemory-TipMemoryUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -972,35 +1117,25 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		9D996E1A2CA59CC4009922FA /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+		9D43BD012CADE9FA008EE2AF /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.19.7;
+				kind = exactVersion;
+				version = 5.19.7;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		9D996E1B2CA59CC4009922FA /* SDWebImage */ = {
+		9D81F6212CADECE7001B78A6 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9D996E1A2CA59CC4009922FA /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			package = 9D43BD012CADE9FA008EE2AF /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
 		};
-		9D996E1D2CA59CC4009922FA /* SDWebImageMapKit */ = {
+		9D81F6272CADED15001B78A6 /* SDWebImageMapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9D996E1A2CA59CC4009922FA /* XCRemoteSwiftPackageReference "SDWebImage" */;
-			productName = SDWebImageMapKit;
-		};
-		9DD332E92CAA3A52004F1F77 /* SDWebImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9D996E1A2CA59CC4009922FA /* XCRemoteSwiftPackageReference "SDWebImage" */;
-			productName = SDWebImage;
-		};
-		9DD332EB2CAA3A52004F1F77 /* SDWebImageMapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9D996E1A2CA59CC4009922FA /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			package = 9D43BD012CADE9FA008EE2AF /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImageMapKit;
 		};
 /* End XCSwiftPackageProductDependency section */

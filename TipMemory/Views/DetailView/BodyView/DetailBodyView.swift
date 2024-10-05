@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import DGCharts
+import WebKit
 
 class DetailBodyView: UIView {
     
@@ -211,6 +213,38 @@ class DetailBodyView: UIView {
         return stackView
     }()
     
+    let youtubeTitleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont(name: "HakgyoansimBunpilR", size: 22)
+        label.text = "관련 영상"
+        label.textColor = .label
+        return label
+    }()
+    
+    let youtubeWebView: WKWebView = {
+        let webView = WKWebView()
+        webView.translatesAutoresizingMaskIntoConstraints = false
+        webView.backgroundColor = .systemRed
+        return webView
+    }()
+    
+    
+//    let visitorChartView: BarChartView = {
+//        let chart = BarChartView()
+//        chart.translatesAutoresizingMaskIntoConstraints = false
+//        chart.data?.setDrawValues(true)   // 막대 위에 값 표시 설정 
+//        chart.animate(yAxisDuration: 1.0)
+//        chart.xAxis.drawGridLinesEnabled = false   // x축 눈금 해제
+//        chart.xAxis.granularity = 1  // x축 간격을 1로 설정하여 모든 막대마다 날짜 표시
+//        chart.xAxis.labelPosition = .bottom // X축 레이블을 아래쪽에 표시
+//        chart.rightAxis.drawGridLinesEnabled = false  // 오른쪽 y축 눈금 해제
+//        chart.doubleTapToZoomEnabled = false  // 두 번 클릭하면 줌 되는 기능 해제
+//
+//        chart.highlightPerTapEnabled = false  // 막대를 누르면 선택되는 기능 해제
+//        chart.rightAxis.enabled = false   // 오른쪽 y축 해제
+//        return chart
+//    }()
     
     // MARK: - Initialization
     override init(frame: CGRect) {
@@ -245,6 +279,10 @@ class DetailBodyView: UIView {
         
         seeMoreOverviewStackView.addArrangedSubview(overviewContentLabel)
         seeMoreOverviewStackView.addArrangedSubview(seeMoreButton)
+        
+        basicView.addSubview(youtubeTitleLabel)
+        basicView.addSubview(youtubeWebView)
+        //basicView.addSubview(visitorChartView)
         
         configureConstraints()
     }
@@ -283,7 +321,7 @@ class DetailBodyView: UIView {
             seeMoreOverviewStackView.leadingAnchor.constraint(equalTo: basicView.leadingAnchor, constant: 10),
             seeMoreOverviewStackView.trailingAnchor.constraint(equalTo: basicView.trailingAnchor, constant: -10),
             seeMoreOverviewStackView.topAnchor.constraint(equalTo: overviewTitleLabel.bottomAnchor, constant: 5),
-            seeMoreOverviewStackView.bottomAnchor.constraint(equalTo: basicView.bottomAnchor, constant: -85)
+            //seeMoreOverviewStackView.bottomAnchor.constraint(equalTo: basicView.bottomAnchor, constant: -85)
         ]
         
         let useTimeStackViewConstraints = [
@@ -302,6 +340,28 @@ class DetailBodyView: UIView {
             phoneStackView.widthAnchor.constraint(equalToConstant: 180)
         ]
         
+        let youtubeTitleLabelConstraints = [
+            youtubeTitleLabel.leadingAnchor.constraint(equalTo: basicView.leadingAnchor, constant: 10),
+            youtubeTitleLabel.trailingAnchor.constraint(equalTo: basicView.trailingAnchor, constant: -10),
+            youtubeTitleLabel.topAnchor.constraint(equalTo: seeMoreButton.bottomAnchor, constant: 20),
+        ]
+        
+        let youtubeWebViewConstraints = [
+            youtubeWebView.leadingAnchor.constraint(equalTo: basicView.leadingAnchor, constant: 10),
+            youtubeWebView.trailingAnchor.constraint(equalTo: basicView.trailingAnchor, constant: -10),
+            youtubeWebView.topAnchor.constraint(equalTo: youtubeTitleLabel.bottomAnchor, constant: 10),
+            youtubeWebView.heightAnchor.constraint(equalToConstant: 300),
+            youtubeWebView.bottomAnchor.constraint(equalTo: basicView.bottomAnchor, constant: -85)
+        ]
+        
+//        let visitorChartViewConstraints = [
+//            visitorChartView.leadingAnchor.constraint(equalTo: basicView.leadingAnchor, constant: 10),
+//            visitorChartView.trailingAnchor.constraint(equalTo: basicView.trailingAnchor, constant: -10),
+//            visitorChartView.topAnchor.constraint(equalTo: visitorTitleLabel.bottomAnchor, constant: 10),
+//            visitorChartView.heightAnchor.constraint(equalToConstant: 300),
+//            visitorChartView.bottomAnchor.constraint(equalTo: basicView.bottomAnchor, constant: -85)
+//        ]
+        
         useTimeImageView.widthAnchor.constraint(equalToConstant: 22).isActive = true
         restDateImageView.widthAnchor.constraint(equalToConstant: 22).isActive = true
         parkingImageView.widthAnchor.constraint(equalToConstant: 22).isActive = true
@@ -313,6 +373,9 @@ class DetailBodyView: UIView {
         NSLayoutConstraint.activate(parkingPhoneStackViewConstraints)
         NSLayoutConstraint.activate(overviewTitleLabelConstraints)
         NSLayoutConstraint.activate(seeMoreOverviewStackViewConstraints)
+        NSLayoutConstraint.activate(youtubeTitleLabelConstraints)
+        NSLayoutConstraint.activate(youtubeWebViewConstraints)
+        // NSLayoutConstraint.activate(visitorChartViewConstraints)
         
         // 추가
         NSLayoutConstraint.activate(useTimeStackViewConstraints)

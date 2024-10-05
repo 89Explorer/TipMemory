@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import DGCharts
 
 class DetailViewController: UIViewController {
     
@@ -15,6 +16,13 @@ class DetailViewController: UIViewController {
     
     var detailImages: [String] = []
     var detailInfo: [InfoItem] = []
+    
+    // 방문자 접속 추이 확인을 위한 변수
+    var areaCode: String = ""
+    var sigunguCode: String = ""
+    var tAtsNm: String?
+    var visitorRatio: [String] = []
+    
     
     // MARK: - UI Components
     let detailView: DetailMainView = {
@@ -42,13 +50,13 @@ class DetailViewController: UIViewController {
         runSeeMoreButton()
         
         getOverview(with: model!)
+        getYoutubeFromTitle(with: model!)
+        
+        // getVisitorChart()
+        // reverseAddrToCode(address: (model?.addr1)!)
+        // getVisitorRatio(with: model!)
     }
-    
-    //    override func viewDidAppear(_ animated: Bool) {
-    //        super.viewDidAppear(animated)
-    //        runSeeMoreButton()  // 여기서 호출해보기
-    //    }
-    
+        
     // 네비게이션바를 투명하게 만드는 함수
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -212,6 +220,112 @@ class DetailViewController: UIViewController {
                 DispatchQueue.main.async {
                     self?.detailView.detailbodyView.getOverview(with: item)
                 }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    // 관광지의 이름을 갖고 youtubeAPI를 통해 데이터를 받아오기
+    func getYoutubeFromTitle(with model: Item) {
+        let title = "\(String(describing: model.title)) + 방문"
+        
+        NetworkManager.shared.getMovie(with: title) { [weak self] results in
+            switch results {
+            case .success(let item):
+                guard let videoId = item.id.videoId else { return }
+                guard let url = URL(string: "https://www.youtube.com/embed/\(videoId)") else { return }
+                print(url)
+                DispatchQueue.main.async {
+                    self?.detailView.detailbodyView.youtubeWebView.load(URLRequest(url: url))
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    // chart 관련 함수
+//    func getVisitorChart() {
+//        var entries: [BarChartDataEntry] = []
+//        let today = Date()
+//        
+//        // x축 데이터: 오늘부터 7일
+//        for i in 0..<7 {
+//            _ = Calendar.current.date(byAdding: .day, value: i, to: today)!
+//            entries.append(BarChartDataEntry(x: Double(i), y: Double(10 * (i + 1)))) // y값은 임의로 설정
+//        }
+//        
+//        // x축 데이터: 오늘부터 7일
+//        for i in 0..<7 {
+//            _ = Calendar.current.date(byAdding: .day, value: i, to: today)!
+//            entries.append(BarChartDataEntry(x: Double(i), y: Double(10 * (i + 1)))) // y값은 임의로 설정
+//        }
+//        
+//        let dataSet = BarChartDataSet(entries: entries, label: "방문자 집중률")
+//        dataSet.colors = [NSUIColor.label] // 모든 막대를 같은 색상으로 설정
+//        dataSet.valueTextColor = .label // 막대 위에 표시될 값의 색상
+//        dataSet.valueFont = .systemFont(ofSize: 12) // 막대 위 값의 폰트 크기
+//
+//        // BarChartData 생성
+//        let data = BarChartData(dataSet: dataSet)
+//        detailView.detailbodyView.visitorChartView.data = data
+//        
+//        // X축에 날짜를 표시하는 Formatter 설정
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "MM/dd"
+//        
+//        detailView.detailbodyView.visitorChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: getFutureDates(forDays: 7, from: today, formatter: dateFormatter))
+//    }
+    
+    // 날짜 배열을 반환하는 함수
+    func getFutureDates(forDays days: Int, from startDate: Date, formatter: DateFormatter) -> [String] {
+        var dates: [String] = []
+        for i in 0..<days {
+            if let futureDate = Calendar.current.date(byAdding: .day, value: i, to: startDate) {
+                dates.append(formatter.string(from: futureDate))
+            }
+        }
+        return dates
+    }
+    
+    //  areaCode, sigunguCode 데이터 반환 함수
+    func reverseAddrToCode(address: String) {
+        let addressComponents = address.split(separator: " ")
+        let city = String(addressComponents[0])   // 경기도
+        let district = String(addressComponents[1])  // 고양시 덕양구
+        
+        // 데이터를 순회하면서 일치하는 데이터를 찾기
+        var areaCode: String?
+        var singunguCode: String?
+        
+        guard let locationCode = HomeViewController.locationCode else { return }
+        
+        for row in locationCode {
+            let areaNm = row[1].replacingOccurrences(of: "\"", with: "") // "areaNm" 값
+            let sigunguNm = row[3].replacingOccurrences(of: "\"", with: "") // "sigunguNm" 값
+            
+            if areaNm == city && sigunguNm == district {
+                areaCode = row[0].replacingOccurrences(of: "\"", with: "") // "areaCd" 값
+                singunguCode = row[2].replacingOccurrences(of: "\"", with: "") // "sigunguCd" 값
+                break
+            }
+        }
+        
+        self.areaCode = areaCode ?? ""
+        self.sigunguCode = singunguCode ?? ""
+    }
+    
+    // 방문객 집중추이를 확인하기 위한 호출 함수
+    func getVisitorRatio(with model: Item) {
+        
+        guard let title = model.title else { return }
+        
+        NetworkManager.shared.getTatsCnctrRatedList(areaCd: self.areaCode, signguCd: self.sigunguCode, tAtsNm: title) { [weak self] results in
+            switch results {
+            case .success(let data):
+                self?.visitorRatio = data.compactMap{ $0.cnctrRate }
+                print(self?.visitorRatio)
             case .failure(let error):
                 print(error.localizedDescription)
             }

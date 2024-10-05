@@ -9,13 +9,13 @@ import Foundation
 
 var locationCode: [[String]] = []
 
-func parseCSVAt(url: URL) {
+func parseCSVAt(url: URL) -> [[String]]{
     
     do {
         let data = try Data(contentsOf: url)
         guard let dataEncoded = String(data: data, encoding: .utf8) else {
             print("Failed to decode data.")
-            return
+            return [[""]]
         }
         
         let dataArr = dataEncoded.components(separatedBy: "\n").map { $0.components(separatedBy: ",") }
@@ -27,4 +27,10 @@ func parseCSVAt(url: URL) {
     } catch {
         print("Error reading CSV files")
     }
+    
+    return locationCode
 }
+
+
+
+

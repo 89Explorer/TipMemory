@@ -11,6 +11,8 @@ import Foundation
 struct Constants {
     static let api_key = "jlK%2B0ig7iLAbdOuTJsnkp6n0RdeEMtGKsw53jEMbKm3PcB7NFTSeUrnXixogiuvNtHQXeqxgV88buRZvTjG73w%3D%3D"
     static let base_URL = "https://apis.data.go.kr/B551011/KorService1"
+    static let youtube_api_key = "AIzaSyAHLZ-6jV-r-pbMKcecQYBLd3IjbsMQTuA"
+    static let YoutubeBaseURL = "https://www.googleapis.com/youtube/v3/search?"
 }
 
 // MARK: - NetworkManager
@@ -254,6 +256,76 @@ class NetworkManager {
         }
         task.resume()
     }
+    
+    
+    // 외부 데이터를 통해 예상 방문자 집중률 추이 함수
+    func getTatsCnctrRatedList(areaCd: String, signguCd: String, tAtsNm: String, completion: @escaping (Result<[VisitorItem], Error>) -> Void) {
+        
+        var components = URLComponents(string: "https://apis.data.go.kr/B551011/TatsCnctrRateService/tatsCnctrRatedList")
+        
+        // 쿼리 아이템 설정
+        components?.queryItems = [
+            URLQueryItem(name: "serviceKey", value: Constants.api_key),
+            URLQueryItem(name: "MobileOS", value: "ETC"),
+            URLQueryItem(name: "MobileApp", value: "AppTest"),
+            URLQueryItem(name: "areaCd", value: areaCd),
+            URLQueryItem(name: "signguCd", value: signguCd),
+            URLQueryItem(name: "tAtsNm", value: tAtsNm),
+            URLQueryItem(name: "numOfRows", value: "10"),
+            URLQueryItem(name: "pageNo", value: "1"),
+            URLQueryItem(name: "_type", value: "json")
+        ]
+        
+        // 퍼센트 인코딩 후 "+"를 "%2B"로 대체
+        if let encodedQuery = components?.percentEncodedQuery?.replacingOccurrences(of: "%25", with: "%") {
+            components?.percentEncodedQuery = encodedQuery
+        }
+        
+        // URL 생성
+        guard let url = components?.url else { return }
+        print(url)
+        let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
+            guard let data = data, error == nil else {
+                if let error = error {
+                    completion(.failure(error))
+                    print("Error 발생: \(error.localizedDescription)")
+                }
+                return
+            }
+            
+            
+            do {
+                let results = try JSONDecoder().decode(TatsCnctrRatedListResponse.self, from: data)
+                let items = results.response.body.items.item
+                completion(.success(items))
+                
+            } catch let jsonError {
+                completion(.failure(jsonError))
+                print("JSON 디코딩 에러: \(jsonError.localizedDescription)")
+            }
+        }
+        task.resume()
+    }
+    
+    func getMovie(with keyword: String, completion: @escaping (Result<VideoElement, Error>) -> Void) {
+        guard let keyword = keyword.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return }
+        
+        guard let url = URL(string: "\(Constants.YoutubeBaseURL)q=\(keyword)&key=\(Constants.youtube_api_key)") else { return }
+        print(url)
+        let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
+            guard let data = data, error == nil else { return }
+            
+            do {
+                let results = try JSONDecoder().decode(YoutubeSearchResponse.self, from: data)
+                completion(.success(results.items[0]))
+            } catch {
+                completion(.failure(error))
+                print(error.localizedDescription)
+            }
+        }
+        task.resume()
+    }
+
 }
 
 

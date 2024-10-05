@@ -1,0 +1,6 @@
+framework module Pods_TipMemoryTests {
+  umbrella header "Pods-TipMemoryTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

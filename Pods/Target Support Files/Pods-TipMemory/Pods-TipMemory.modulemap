@@ -1,0 +1,6 @@
+framework module Pods_TipMemory {
+  umbrella header "Pods-TipMemory-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -81,4 +81,6 @@ class DetailImageCollectionViewCell: UICollectionViewCell {
             imageView.image = UIImage(systemName: "house.fill")
         }
     }
+    
+    
 }
